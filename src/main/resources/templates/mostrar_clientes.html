@@ -47,7 +47,7 @@ th, td {
 						<th>Primer apellido</th>
 						<th>Segundo apellido</th>
 						<th>Fecha de nacimiento</th>
-						<th>Dni</th>
+						
 					</tr>
 				</thead>
 				<tbody>
@@ -56,7 +56,7 @@ th, td {
 						<td th:text="${client.surname1}"></td>
 						<td th:text="${client.surname2}"></td>
 						<td th:text="${client.dateOfBirth}"></td>
-						<td th:text="${client.dni}"></td>
+						
 						<td>
 							<form th:action="@{/client/eliminar}" method="post">
 								<input type="hidden" name="id" th:value="${client.id}" />

@@ -4,9 +4,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.taller.spring.entity.Client;
+
+/**
+ * @author Eva
+ *
+ */
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long> {
-	
+
 	/**
 	 * Busca clientes por nombre y apellidos
 	 * 
@@ -14,20 +19,31 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
 	 * @param surname1
 	 * @param surname2
 	 */
-	Client findByNameAndSurname1AndSurname2(String name, String surname1,String surname2);
+	Client findByNameAndSurname1AndSurname2(String name, String surname1, String surname2);
+
+	/**
+	 * Busca clientes por su username.
+	 * 
+	 * @param username
+	 */
+	Client findByUsername(String username);
+
+	/**
+	 * Busca el usuario y contraseña
+	 * 
+	 * @param username
+	 * @param password
+	 */
+
+	Client findByUsernameAndPassword(String username, String password);
 	
 	/**
-	 * Busca clientes por su dni.
+	 * Busca el usuario y el rol
 	 * 
-	 * @param dni
+	 * @param username
+	 * @param rol
 	 */
-	Client findByDni(String dni);
-	
-	/**
-	 * Busca clientes por su nombre.
-	 * 
-	 * @param name
-	 */
-	Client findByName(String name);
+
+	Client findByRol(String username);
 
 }

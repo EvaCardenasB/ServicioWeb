@@ -45,9 +45,17 @@ public class Client implements Serializable  {
 	@Column(name = "DATE_OF_BIRTH", nullable = false)
 	private String dateOfBirth;
 	
-	@Column(name = "DNI", nullable = false)
-	/** dni del cliente */
-	private String dni;
+	@Column(name = "EMAIL", nullable = false)
+	/** email del cliente */
+	private String username;
+	
+	@Column(name = "PASSWORD", nullable = false)
+	/** email del cliente */
+	private String password;
+	
+	@Column(name = "ROL")
+	/** admin */
+	private boolean rol;
 
 
 	/**
@@ -55,15 +63,15 @@ public class Client implements Serializable  {
 	 * @param surname1
 	 * @param surname2
 	 * @param dateOfBirth
-	 * @param dni
+	 * @param username
 	 */
-	public Client(String name, String surname1, String surname2, String dateOfBirth, String dni) {
+	public Client(String name, String surname1, String surname2, String dateOfBirth, String username) {
 		super();
 		this.name = name;
 		this.surname1 = surname1;
 		this.surname2 = surname2;
 		this.dateOfBirth = dateOfBirth;
-		this.dni = dni;
+		this.username = username;
 	}
 	
 
@@ -150,20 +158,47 @@ public class Client implements Serializable  {
 	/**
 	 * @param dni the dni to set
 	 */
-	public void setDni(String dni) {
-		this.dni = dni;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	/**
-	 * @return the dni
+	 * @return the username
 	 */
-	public String getDni() {
-		return dni;
+	public String getUsername() {
+		return username;
 	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+
+	public boolean isRol() {
+		return rol;
+	}
+
+
+	public boolean getRol() {
+		return rol;
+	}
+	public void setRol(boolean rol) {
+		this.rol = rol;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Cliente [clientId=" + id + ", name=" + name + ", surname1=" + surname1 + ", surname2=" + surname2
-				+ ", dni=" + dni + "]\n";
+				+ ", username=" + username + "]\n";
 	}
 	
 }

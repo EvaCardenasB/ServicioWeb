@@ -54,12 +54,26 @@
 				<div th:errors="*{dateOfBirth}"></div>
 			</div>
 
-			<!-- Input codigo postal-->
+			<!-- Input email-->
 			<div>
-				<label for="dni">DNI:</label> <input th:field="*{dni}" id="dni"
-					placeholder="Escriba su dni" type="text"
-					th:classappend="${#fields.hasErrors('dni')} ? 'is-invalid' : ''">
-				<div th:errors="*{dni}"></div>
+				<label for="username">Email:</label> <input th:field="*{username}" id="username"
+					placeholder="Escriba su email" type="text"
+					th:classappend="${#fields.hasErrors('username')} ? 'is-invalid' : ''">
+				<div th:errors="*{username}"></div>
+
+			</div>
+			<div>
+				<label for="password">Contraseña:</label> <input th:field="*{password}" id="password"
+					placeholder="Escriba su contraseña" type="text"
+					th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : ''">
+				<div th:errors="*{password}"></div>
+
+			</div>
+			<div>
+				<label for="rol">Perfil de administrador:</label> <input th:field="*{rol}" id="rol"
+					type="checkbox"
+					th:classappend="${#fields.hasErrors('rol')} ? 'is-invalid' : ''">
+				<div th:errors="*{rol}"></div>
 
 			</div>
 			<button type="submit">Añadir cliente</button>
